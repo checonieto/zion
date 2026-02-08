@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zion vs. Babylon: Building a Christ-Centered Community. Created by Bison Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --zion-blue: #2c5fa5;
+            --zion-light: #4a8cff;
+            --zion-bg: #f0f7ff;
+            --babylon-red: #8b0000;
+            --babylon-dark: #660000;
+            --babylon-bg: #fff0f0;
+            --light-color: #ffffff;
+            --dark-color: #333333;
+            --gray-color: #f8f9fa;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--zion-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(to right, var(--zion-blue), var(--zion-light));
+            color: var(--light-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            color: var(--zion-blue);
+            border-bottom: 3px solid var(--zion-light);
+            padding-bottom: 10px;
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+        }
+        
+        .scripture-ref {
+            font-style: italic;
+            color: var(--zion-blue);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .characteristics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .characteristic-card {
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--zion-blue);
+            transition: var(--transition);
+        }
+        
+        .characteristic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        .characteristic-card h3 {
+            color: var(--zion-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .characteristic-card h3 i {
+            margin-right: 10px;
+            color: var(--zion-light);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .zion-header {
+            background-color: var(--zion-blue);
+            color: white;
+        }
+        
+        .babylon-header {
+            background-color: var(--babylon-red);
+            color: white;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        .zion-cell {
+            background-color: rgba(44, 95, 165, 0.05);
+            border-right: 1px solid #ddd;
+        }
+        
+        .babylon-cell {
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+        
+        .verse {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        /* Game Styles */
+        .game-section {
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .game-intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .scenario-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .scenario-card {
+            background: var(--gray-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid #888;
+        }
+        
+        .scenario-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .choice-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+        }
+        
+        .zion-btn {
+            background-color: var(--zion-blue);
+            color: white;
+        }
+        
+        .babylon-btn {
+            background-color: var(--babylon-red);
+            color: white;
+        }
+        
+        .choice-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        
+        .choice-btn i {
+            margin-right: 8px;
+        }
+        
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            display: none;
+        }
+        
+        .correct {
+            background-color: rgba(0, 128, 0, 0.1);
+            color: #006400;
+            border: 1px solid #006400;
+        }
+        
+        .incorrect {
+            background-color: rgba(255, 0, 0, 0.1);
+            color: #8b0000;
+            border: 1px solid #8b0000;
+        }
+        
+        .game-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .game-btn {
+            padding: 10px 20px;
+            background-color: var(--zion-blue);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: bold;
+        }
+        
+        .game-btn:hover {
+            background-color: var(--zion-light);
+        }
+        
+        .score-display {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--zion-blue);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .characteristics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th, .comparison-table td {
+                padding: 10px;
+            }
+            
+            .choices {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .choice-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Zion vs. Babylon</h1>
+            <p class="subtitle">Understanding the characteristics of a Christ-centered community based on Moses 7</p>
+            <p><i>"And the Lord called his people Zion, because they were of one heart and one mind, and dwelt in righteousness; and there was no poor among them."</i> - Moses 7:18</p>
+        </header>
+        
+        <section>
+            <h2 class="section-title">Characteristics of Zion</h2>
+            <p>From Moses 7, we learn about the society of Zion that Enoch established. These characteristics define what it means to be a Zion people:</p>
+            
+            <div class="characteristics-grid">
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-heart"></i> One Heart and One Mind</h3>
+                    <p>Unity in purpose and love among all people.</p>
+                    <div class="scripture-ref">Moses 7:18</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-balance-scale"></i> Dwells in Righteousness</h3>
+                    <p>A society where people live according to God's commandments.</p>
+                    <div class="scripture-ref">Moses 7:16, 18, 19</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-hands-helping"></i> No Poor Among Them</h3>
+                    <p>Care for one another ensures everyone's needs are met.</p>
+                    <div class="scripture-ref">Moses 7:18</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-church"></i> The Lord Dwells With His People</h3>
+                    <p>God's presence is felt and acknowledged in daily life.</p>
+                    <div class="scripture-ref">Moses 7:16, 69</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-star"></i> City of Holiness</h3>
+                    <p>Set apart and dedicated to God's purposes.</p>
+                    <div class="scripture-ref">Moses 7:19</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-walking"></i> Walk With God</h3>
+                    <p>Daily companionship and communion with the Divine.</p>
+                    <div class="scripture-ref">Moses 7:69</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-pray"></i> Faith Brings God's Power</h3>
+                    <p>Miracles follow genuine faith in Christ.</p>
+                    <div class="scripture-ref">Moses 7:13</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-seedling"></i> Blessed and Flourish</h3>
+                    <p>Prosperity in spiritual and temporal matters.</p>
+                    <div class="scripture-ref">Moses 7:17</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-hands"></i> Taken Into God's Bosom</h3>
+                    <p>Received into divine love and protection.</p>
+                    <div class="scripture-ref">Moses 7:21, 63</div>
+                </div>
+                
+                <div class="characteristic-card">
+                    <h3><i class="fas fa-dove"></i> Prepared to Receive Christ</h3>
+                    <p>Ready for the Second Coming through righteous living.</p>
+                    <div class="scripture-ref">Moses 7:47, 62-63</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">Zion vs. Babylon: A Comparison</h2>
+            <p>The scriptures contrast the society of Zion with that of Babylon, representing worldly values and separation from God.</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th class="zion-header">Zion</th>
+                        <th class="babylon-header">Babylon (Opposite)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>One heart and one mind</strong>
+                            <div class="verse">(v. 18)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Divided and contentious</strong>
+                            <div class="verse">(v. 33)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>Righteousness</strong>
+                            <div class="verse">(vv. 16, 18)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Wickedness</strong>
+                            <div class="verse">(v. 24)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>No poor among them</strong>
+                            <div class="verse">(v. 18)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Misery and suffering</strong>
+                            <div class="verse">(v. 37)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>God dwells with them</strong>
+                            <div class="verse">(v. 16)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Satan rules with darkness</strong>
+                            <div class="verse">(v. 26)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>City of Holiness</strong>
+                            <div class="verse">(v. 19)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Earth covered in corruption</strong>
+                            <div class="verse">(vv. 24-26)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>Walk with God</strong>
+                            <div class="verse">(v. 69)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Walk after Satan</strong>
+                            <div class="verse">(v. 37)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>Blessed and flourish</strong>
+                            <div class="verse">(v. 17)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Cursed and barren</strong>
+                            <div class="verse">(v. 8)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>Taken into God's bosom</strong>
+                            <div class="verse">(v. 21)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Shut up in prison / darkness</strong>
+                            <div class="verse">(v. 38)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="zion-cell">
+                            <strong>Rejoice in Christ</strong>
+                            <div class="verse">(v. 47)</div>
+                        </td>
+                        <td class="babylon-cell">
+                            <strong>Fear and torment</strong>
+                            <div class="verse">(vv. 1, 39)</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="game-section">
+            <div class="game-intro">
+                <h2 class="section-title">Zion or Babylon? Interactive Game</h2>
+                <p>Read each scenario and decide whether it reflects Zion or Babylon values. Choose wisely!</p>
+                <div class="score-display">Score: <span id="score">0</span>/<span id="total">0</span></div>
+            </div>
+            
+            <div class="scenario-container">
+                <div class="scenario-card">
+                    <div class="scenario-text" id="scenario-text"></div>
+                    
+                    <div class="choices">
+                        <button class="choice-btn zion-btn" id="zion-btn">
+                            <i class="fas fa-church"></i> Zion
+                        </button>
+                        <button class="choice-btn babylon-btn" id="babylon-btn">
+                            <i class="fas fa-city"></i> Babylon
+                        </button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback"></div>
+                </div>
+                
+                <div class="game-controls">
+                    <button class="game-btn" id="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="game-btn" id="next-btn">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Lesson based on Moses 7 | Created for Church instruction</p>
+            <p>Use this material to reflect on how we can build Zion in our homes and communities today.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Game data - scenarios with correct answers
+        const scenarios = [
+            {
+                text: "A family notices one sibling struggling financially and quietly adjusts their budget to help without shaming them.",
+                answer: "zion"
+            },
+            {
+                text: "At work, employees compete by sabotaging each other to get promotions.",
+                answer: "babylon"
+            },
+            {
+                text: "A school classroom encourages collaboration, mentoring, and shared success.",
+                answer: "zion"
+            },
+            {
+                text: "A church focuses more on appearances, status, and numbers than on ministering to individuals.",
+                answer: "babylon"
+            },
+            {
+                text: "Parents admit mistakes to their children and ask for forgiveness.",
+                answer: "zion"
+            },
+            {
+                text: "A company increases profits by exploiting workers and hiding unsafe practices.",
+                answer: "babylon"
+            },
+            {
+                text: "Neighbors organize to help a struggling family after a disaster.",
+                answer: "zion"
+            },
+            {
+                text: "A leader uses fear and threats to control others.",
+                answer: "babylon"
+            },
+            {
+                text: "A team celebrates collective success instead of individual glory.",
+                answer: "zion"
+            },
+            {
+                text: "A family measures worth by income, looks, or social media presence.",
+                answer: "babylon"
+            },
+            {
+                text: "Church members quietly serve those who can't repay them.",
+                answer: "zion"
+            },
+            {
+                text: "Students cheat because 'everyone does it' and justify dishonesty.",
+                answer: "babylon"
+            },
+            {
+                text: "A workplace makes decisions based on integrity even when it costs money.",
+                answer: "zion"
+            },
+            {
+                text: "People ignore the poor, blaming them entirely for their situation.",
+                answer: "babylon"
+            },
+            {
+                text: "A community chooses reconciliation over revenge after conflict.",
+                answer: "zion"
+            },
+            {
+                text: "Parents pit siblings against each other through comparison and favoritism.",
+                answer: "babylon"
+            },
+            {
+                text: "A leader listens, serves, and lifts others instead of seeking praise.",
+                answer: "zion"
+            },
+            {
+                text: "A society normalizes violence, cruelty, and dehumanization.",
+                answer: "babylon"
+            },
+            {
+                text: "A family centers daily life around faith, love, and service.",
+                answer: "zion"
+            },
+            {
+                text: "People mock righteousness and celebrate pride and excess.",
+                answer: "babylon"
+            }
+        ];
+
+        // Game state
+        let currentScenario = 0;
+        let score = 0;
+        let totalAttempted = 0;
+        let userAnswers = new Array(scenarios.length).fill(null);
+
+        // DOM elements
+        const scenarioText = document.getElementById('scenario-text');
+        const zionBtn = document.getElementById('zion-btn');
+        const babylonBtn = document.getElementById('babylon-btn');
+        const feedback = document.getElementById('feedback');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const scoreDisplay = document.getElementById('score');
+        const totalDisplay = document.getElementById('total');
+
+        // Initialize the game
+        function initGame() {
+            updateScenario();
+            updateScoreDisplay();
+            
+            // Event listeners
+            zionBtn.addEventListener('click', () => checkAnswer('zion'));
+            babylonBtn.addEventListener('click', () => checkAnswer('babylon'));
+            prevBtn.addEventListener('click', showPreviousScenario);
+            nextBtn.addEventListener('click', showNextScenario);
+        }
+
+        // Update the current scenario display
+        function updateScenario() {
+            scenarioText.textContent = `${currentScenario + 1}. ${scenarios[currentScenario].text}`;
+            feedback.style.display = 'none';
+            
+            // Update buttons based on whether user has already answered
+            if (userAnswers[currentScenario] !== null) {
+                feedback.style.display = 'block';
+                if (userAnswers[currentScenario] === scenarios[currentScenario].answer) {
+                    feedback.textContent = "Correct! This reflects " + (scenarios[currentScenario].answer === 'zion' ? 'Zion values.' : 'Babylon values.');
+                    feedback.className = 'feedback correct';
+                } else {
+                    feedback.textContent = "Incorrect. This reflects " + (scenarios[currentScenario].answer === 'zion' ? 'Zion values.' : 'Babylon values.');
+                    feedback.className = 'feedback incorrect';
+                }
+                
+                // Disable buttons for already answered questions
+                zionBtn.disabled = true;
+                babylonBtn.disabled = true;
+                zionBtn.style.opacity = '0.6';
+                babylonBtn.style.opacity = '0.6';
+            } else {
+                // Enable buttons for unanswered questions
+                zionBtn.disabled = false;
+                babylonBtn.disabled = false;
+                zionBtn.style.opacity = '1';
+                babylonBtn.style.opacity = '1';
+            }
+            
+            // Update button visibility
+            prevBtn.style.visibility = currentScenario === 0 ? 'hidden' : 'visible';
+            nextBtn.textContent = currentScenario === scenarios.length - 1 ? 'Finish' : 'Next';
+        }
+
+        // Check the user's answer
+        function checkAnswer(userChoice) {
+            const correctAnswer = scenarios[currentScenario].answer;
+            
+            // Store the user's answer
+            userAnswers[currentScenario] = userChoice;
+            
+            // Check if answer is correct
+            if (userChoice === correctAnswer) {
+                feedback.textContent = "Correct! This reflects " + (correctAnswer === 'zion' ? 'Zion values.' : 'Babylon values.');
+                feedback.className = 'feedback correct';
+                score++;
+            } else {
+                feedback.textContent = "Incorrect. This reflects " + (correctAnswer === 'zion' ? 'Zion values.' : 'Babylon values.');
+                feedback.className = 'feedback incorrect';
+            }
+            
+            feedback.style.display = 'block';
+            totalAttempted++;
+            
+            // Update score display
+            updateScoreDisplay();
+            
+            // Disable buttons after answering
+            zionBtn.disabled = true;
+            babylonBtn.disabled = true;
+            zionBtn.style.opacity = '0.6';
+            babylonBtn.style.opacity = '0.6';
+            
+            // Add visual feedback to the scenario card
+            const scenarioCard = document.querySelector('.scenario-card');
+            if (userChoice === correctAnswer) {
+                scenarioCard.style.borderLeftColor = '#006400';
+                scenarioCard.style.boxShadow = '0 3px 12px rgba(0, 100, 0, 0.2)';
+            } else {
+                scenarioCard.style.borderLeftColor = '#8b0000';
+                scenarioCard.style.boxShadow = '0 3px 12px rgba(139, 0, 0, 0.2)';
+            }
+            
+            // Reset card style after a moment
+            setTimeout(() => {
+                scenarioCard.style.boxShadow = '0 3px 8px rgba(0,0,0,0.08)';
+            }, 1000);
+        }
+
+        // Show the next scenario
+        function showNextScenario() {
+            if (currentScenario < scenarios.length - 1) {
+                currentScenario++;
+                updateScenario();
+            } else {
+                // Show final score if at the end
+                alert(`Game complete! Your final score: ${score}/${scenarios.length}`);
+            }
+        }
+
+        // Show the previous scenario
+        function showPreviousScenario() {
+            if (currentScenario > 0) {
+                currentScenario--;
+                updateScenario();
+            }
+        }
+
+        // Update the score display
+        function updateScoreDisplay() {
+            scoreDisplay.textContent = score;
+            totalDisplay.textContent = scenarios.length;
+        }
+
+        // Initialize the game when the page loads
+        window.addEventListener('DOMContentLoaded', initGame);
+    </script>
+</body>
+</html>
